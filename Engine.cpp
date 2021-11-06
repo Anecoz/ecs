@@ -49,10 +49,10 @@ void Engine::addSystem(std::unique_ptr<System> system)
   });
 }
 
-void Engine::runOnce()
+void Engine::runOnce(double delta)
 {
   for (auto& system: _systems) {
-    system->run(*this);
+    system->run(*this, delta);
   }
 }
 

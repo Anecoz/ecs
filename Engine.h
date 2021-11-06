@@ -27,7 +27,7 @@ public:
 
   void addSystem(std::unique_ptr<System> system);
 
-  void runOnce();
+  void runOnce(double delta);
 private:
   std::vector<std::unique_ptr<Entity>> _entities;
   std::vector<std::unique_ptr<System>> _systems;
