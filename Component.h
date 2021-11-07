@@ -20,4 +20,7 @@ public:
 #define COMPONENT_ID(compId) \
 ecs::ComponentID id() override final { \
   return compId; \
+} \
+static ecs::ComponentID staticId() { \
+  return compId; \
 }

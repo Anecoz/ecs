@@ -30,6 +30,13 @@ public:
   void addComp(std::unique_ptr<Component> comp);
   void removeComp(ComponentID compId);
 
+  template <typename T>
+  T* getComp()
+  {
+    auto comp = getComp(T::staticId());
+    return comp? static_cast<T*>(comp) : nullptr;
+  }
+
 private:
   std::vector<std::unique_ptr<Component>> _components;
   EntityID _id;
